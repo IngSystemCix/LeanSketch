@@ -66,6 +66,12 @@ function adjustTextareaHeight(textarea) {
 
 buttonClear.addEventListener("click", () => {
   textareas.forEach((textarea) => {
+    Swal.fire({
+      text: "Todos los campos han sido borrados.",
+      icon: 'success',
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#4caf50'
+    });
     textarea.value = ""; // Limpiar el contenido del textarea
     adjustTextareaHeight(textarea); // Ajustar la altura después de limpiar
   });
