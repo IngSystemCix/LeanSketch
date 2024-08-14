@@ -53,9 +53,16 @@ textareas.forEach((textarea) => {
 
 const buttonClear = document.querySelector("#button-clear");
 
+// Función para ajustar la altura del textarea
+function adjustTextareaHeight(textarea) {
+  textarea.style.height = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
+}
+
 buttonClear.addEventListener("click", () => {
   textareas.forEach((textarea) => {
     textarea.value = ""; // Limpiar el contenido del textarea
+    adjustTextareaHeight(textarea); // Ajustar la altura después de limpiar
   });
 });
 
@@ -71,12 +78,10 @@ function captureDiv() {
 
 textareas.forEach(textarea => {
   // Ajusta la altura al cargar la página
-  textarea.style.height = 'auto';
-  textarea.style.height = `${textarea.scrollHeight}px`;
+  adjustTextareaHeight(textarea);
 
   // Ajusta la altura a medida que se escribe
   textarea.addEventListener('input', () => {
-    textarea.style.height = 'auto';
-    textarea.style.height = `${textarea.scrollHeight}px`;
+    adjustTextareaHeight(textarea);
   });
 });
