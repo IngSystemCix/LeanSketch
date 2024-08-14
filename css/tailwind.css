@@ -42,7 +42,7 @@
 @layer components {
   /* Estilos personalizados para componentes */
   .contenedor {
-    @apply w-full h-full rounded-lg border-2 border-solid border-blue-600 dark:border-green-600 overflow-hidden;
+    @apply bg-slate-300 dark:bg-slate-900 w-full h-full rounded-lg border-2 border-solid border-blue-600 dark:border-green-600 overflow-hidden;
   }
 
   .sub-contenedor {
