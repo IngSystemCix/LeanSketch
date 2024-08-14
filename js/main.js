@@ -50,3 +50,21 @@ textareas.forEach((textarea) => {
     }
   });
 });
+
+const buttonClear = document.querySelector("#button-clear");
+
+buttonClear.addEventListener("click", () => {
+  textareas.forEach((textarea) => {
+    textarea.value = ""; // Limpiar el contenido del textarea
+  });
+});
+
+function captureDiv() {
+  html2canvas(document.querySelector(".auto-captura")).then((canvas) => {
+    let img = canvas.toDataURL("image/png");
+    let link = document.createElement("a");
+    link.href = img;
+    link.download = "screenshot.png";
+    link.click();
+  });
+}

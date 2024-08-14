@@ -23,6 +23,7 @@
     outline: none;
     scrollbar-width: thin;
     scrollbar-color: #4b5563 transparent;
+    resize: content;
     @apply bg-transparent text-black dark:text-white;
   }
 
@@ -52,7 +53,7 @@
     @apply flex justify-center items-center gap-3 px-2 py-1 rounded-full bg-blue-600 font-bold dark:bg-green-600 text-white select-none;
 
     span {
-      @apply hidden lg:block text-lg sm:text-sm;
+      @apply text-[.8rem] sm:text-sm;
     }
   }
 
@@ -61,11 +62,13 @@
   }
 
   #button-download,
+  #button-clear,
   #button-theme {
     @apply flex justify-center items-center rounded-full bg-blue-600 dark:bg-green-600 text-white;
   }
 
-  #button-download {
+  #button-download,
+  #button-clear {
     @apply px-3 py-2 gap-2;
   }
 
