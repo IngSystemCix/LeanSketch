@@ -68,3 +68,15 @@ function captureDiv() {
     link.click();
   });
 }
+
+textareas.forEach(textarea => {
+  // Ajusta la altura al cargar la página
+  textarea.style.height = 'auto';
+  textarea.style.height = `${textarea.scrollHeight}px`;
+
+  // Ajusta la altura a medida que se escribe
+  textarea.addEventListener('input', () => {
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  });
+});

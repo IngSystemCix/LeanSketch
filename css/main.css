@@ -482,6 +482,9 @@ textarea,
   scrollbar-width: thin;
   scrollbar-color: #4b5563 transparent;
   resize: content;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
   background-color: transparent;
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -615,6 +618,7 @@ textarea::-webkit-scrollbar-thumb,
 /* Estilos personalizados para componentes */
 
 .contenedor {
+  height: auto;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -696,7 +700,7 @@ textarea::-webkit-scrollbar-thumb,
 }
 
 .sub-contenedor-values {
-  height: 100%;
+  height: auto;
   width: 100%;
   overflow: hidden;
 }
@@ -797,10 +801,6 @@ textarea::-webkit-scrollbar-thumb,
 .size-10 {
   width: 2.5rem;
   height: 2.5rem;
-}
-
-.h-full {
-  height: 100%;
 }
 
 .w-full {
