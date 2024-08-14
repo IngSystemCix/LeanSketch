@@ -12,12 +12,21 @@
 
   body {
     font-family: "Nunito", sans-serif;
-    @apply bg-slate-300 dark:bg-slate-900;
+    @apply flex flex-col justify-center items-center p-3 gap-6 bg-slate-300 dark:bg-slate-900;
   }
 }
 
 @layer components {
   /* Your custom component styles go here */
+  .contenedor {
+    @apply w-full h-full grid grid-cols-5 grid-rows-3 rounded-lg border-2 border-solid border-blue-600 dark:border-green-600 p-3 overflow-hidden;
+  }
+  #button-download {
+    @apply flex justify-center items-center px-3 py-2 gap-2 rounded-full bg-blue-600 dark:bg-green-600 text-white;
+  }
+  #button-theme {
+    @apply flex justify-center items-center p-2.5 rounded-full bg-blue-600 dark:bg-green-600 text-white;
+  }
 }
 
 @layer utilities {

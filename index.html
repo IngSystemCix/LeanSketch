@@ -8,9 +8,29 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <title>LeanSketch</title>
   </head>
   <body>
-    
+    <header class="w-full flex justify-center items-center">
+      <nav class="w-full flex justify-between items-center gap-3">
+        <div class="flex justify-center items-center gap-2">
+          <img src="./favicon.svg" alt="LeanSketch" class="size-10">
+          <span class="font-bold text-black dark:text-white">LeanSketch</span>
+        </div>
+        <div class="flex justify-center items-center gap-3">
+          <button type="button" id="button-download">
+            <i class="bi bi-download"></i>Guardar
+          </button>
+          <button type="button">
+            <i class="bi bi-brightness-low-fill" id="button-theme"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div class="contenedor">
+      <div></div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
