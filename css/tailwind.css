@@ -3,32 +3,77 @@
 @tailwind utilities;
 
 @layer base {
-  /* Your custom base styles go here */
+  /* Estilos base personalizados */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin; /* Valores: auto, thin, none */
+    scrollbar-color: #0173b6 transparent; /* Color del thumb | Color del track */
   }
 
   body {
     font-family: "Nunito", sans-serif;
     @apply flex flex-col justify-center items-center p-3 gap-6 bg-slate-300 dark:bg-slate-900;
   }
+
+  textarea,
+  .listTextarea {
+    resize: none;
+    outline: none;
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 transparent;
+    @apply bg-transparent text-black dark:text-white;
+  }
+
+  textarea::-webkit-scrollbar,
+  .listTextarea::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  textarea::-webkit-scrollbar-thumb,
+  .listTextarea::-webkit-scrollbar-thumb {
+    background-color: #4b5563;
+    border-radius: 1rem;
+  }
 }
 
 @layer components {
-  /* Your custom component styles go here */
+  /* Estilos personalizados para componentes */
   .contenedor {
-    @apply w-full h-full grid grid-cols-5 grid-rows-3 rounded-lg border-2 border-solid border-blue-600 dark:border-green-600 p-3 overflow-hidden;
+    @apply w-full h-full rounded-lg border-2 border-solid border-blue-600 dark:border-green-600 overflow-hidden;
   }
-  #button-download {
-    @apply flex justify-center items-center px-3 py-2 gap-2 rounded-full bg-blue-600 dark:bg-green-600 text-white;
+
+  .sub-contenedor {
+    @apply w-full h-full flex flex-col justify-start items-start gap-3 border-2 border-solid border-blue-600 dark:border-green-600 p-3 text-black dark:text-white;
   }
+
+  .badge {
+    @apply flex justify-center items-center gap-3 px-2 py-1 rounded-full bg-blue-600 font-bold dark:bg-green-600 text-white select-none;
+
+    span {
+      @apply hidden lg:block text-lg sm:text-sm;
+    }
+  }
+
+  .sub-contenedor-values {
+    @apply w-full h-full overflow-hidden;
+  }
+
+  #button-download,
   #button-theme {
-    @apply flex justify-center items-center p-2.5 rounded-full bg-blue-600 dark:bg-green-600 text-white;
+    @apply flex justify-center items-center rounded-full bg-blue-600 dark:bg-green-600 text-white;
+  }
+
+  #button-download {
+    @apply px-3 py-2 gap-2;
+  }
+
+  #button-theme {
+    @apply p-2.5;
   }
 }
 
 @layer utilities {
-  /* Your custom utilities go here */
+  /* Utilidades personalizadas */
 }

@@ -14,10 +14,12 @@
   <body>
     <header class="w-full flex justify-center items-center">
       <nav class="w-full flex justify-between items-center gap-3">
-        <div class="flex justify-center items-center gap-2">
-          <img src="./favicon.svg" alt="LeanSketch" class="size-10">
-          <span class="font-bold text-black dark:text-white">LeanSketch</span>
-        </div>
+        <a href="./index.html" class="flex justify-center items-center gap-2">
+          <img src="./favicon.svg" alt="LeanSketch" class="size-10" />
+          <span class="font-bold text-black dark:text-white select-none"
+            >LeanSketch</span
+          >
+        </a>
         <div class="flex justify-center items-center gap-3">
           <button type="button" id="button-download">
             <i class="bi bi-download"></i>Guardar
@@ -28,9 +30,100 @@
         </div>
       </nav>
     </header>
-    <div class="contenedor">
-      <div></div>
+    <div class="contenedor grid grid-cols-5 grid-rows-3">
+      <!-- Superior -->
+      <div class="sub-contenedor col-start-1 row-start-1 row-span-2">
+        <div class="badge" title="PROBLEMA">
+          <i class="bi bi-lock-fill"></i> <span>PROBLEMA</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+        <div class="badge" title="ALTERNATIVAS EXISTENTES">
+          <i class="bi bi-controller"></i> <span>ALTERNATIVAS EXISTENTES</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+      </div>
+      <div class="sub-contenedor col-start-2 row-start-1">
+        <div class="badge" title="SOLUCIÓN">
+          <i class="bi bi-key"></i> <span>SOLUCIÓN</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+      </div>
+      <div class="sub-contenedor col-start-2 row-start-2">
+        <div class="badge" title="MÉTRICAS CLAVES">
+          <i class="bi bi-bar-chart-line"></i> <span>MÉTRICAS CLAVES</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+      </div>
+      <div class="sub-contenedor col-start-3 row-start-1 row-span-2">
+        <div class="badge" title="PROPUESTA DE VALOR UNICO">
+          <i class="bi bi-box2-heart"></i> <span>PROPUESTA DE VALOR UNICO</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+        <div class="badge" title="CONCEPTOS DE ALTO NIVEL">
+          <i class="bi bi-lightbulb"></i> <span>CONCEPTOS DE ALTO NIVEL</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+      </div>
+      <div class="sub-contenedor col-start-4 row-start-1">
+        <div class="badge" title="VENTAJA ESPACIAL">
+          <i class="bi bi-rocket"></i> <span>VENTAJA ESPACIAL</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+      </div>
+      <div class="sub-contenedor col-start-4 row-start-2">
+        <div class="badge" title="CANALES">
+          <i class="bi bi-truck"></i> <span>CANALES</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+      </div>
+      <div class="sub-contenedor col-start-5 row-start-1 row-span-2">
+        <div class="badge" title="SEGMENTO DE CLIENTES">
+          <i class="bi bi-people-fill"></i> <span>SEGMENTO DE CLIENTES</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+        <div class="badge" title="ENTUSIASTAS">
+          <i class="bi bi-emoji-laughing"></i> <span>ENTUSIASTAS</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+      </div>
+      <!-- Inferior -->
+      <div class="sub-contenedor col-start-1 col-span-3 row-start-3">
+        <div class="badge" title="ESTRUCTURA DE COSTOS">
+          <i class="bi bi-card-checklist"></i> <span>ESTRUCTURA DE COSTOS</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+      </div>
+      <div class="sub-contenedor col-start-4 col-span-2 row-start-3">
+        <div class="badge" title="ESTRUCTURA DE COSTOS">
+          <i class="bi bi-cash-coin"></i> <span>FLUJO DE INGRESO</span>
+        </div>
+        <div class="sub-contenedor-values">
+          <textarea name="" id="" cols="30" rows="10" class="w-full h-full listTextarea"></textarea>
+        </div>
+      </div>
     </div>
-    <script type="module" src="./js/main.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
