@@ -1,16 +1,22 @@
 const buttonTheme = document.querySelector("#button-theme");
 let checkTheme = localStorage.getItem("theme") === "dark";
 
-// Establecer el tema inicial
+// Establecer el tema inicial y el ícono correspondiente
 if (checkTheme) {
   document.querySelector("html").classList.add("dark");
   buttonTheme.classList.remove("bi-brightness-low-fill");
   buttonTheme.classList.add("bi-moon-stars-fill");
+} else {
+  document.querySelector("html").classList.remove("dark");
+  buttonTheme.classList.remove("bi-moon-stars-fill");
+  buttonTheme.classList.add("bi-brightness-low-fill");
 }
 
 buttonTheme.addEventListener("click", () => {
   const html = document.querySelector("html");
   html.classList.toggle("dark");
+  checkTheme = !checkTheme;
+
   if (checkTheme) {
     buttonTheme.classList.remove("bi-brightness-low-fill");
     buttonTheme.classList.add("bi-moon-stars-fill");
@@ -18,7 +24,6 @@ buttonTheme.addEventListener("click", () => {
     buttonTheme.classList.remove("bi-moon-stars-fill");
     buttonTheme.classList.add("bi-brightness-low-fill");
   }
-  checkTheme = !checkTheme;
 
   // Guardar el estado del tema en localStorage
   localStorage.setItem("theme", checkTheme ? "dark" : "light");
