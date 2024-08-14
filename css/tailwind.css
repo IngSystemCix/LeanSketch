@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Your custom base styles go here */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Nunito", sans-serif;
+    @apply bg-slate-300 dark:bg-slate-900;
+  }
+}
+
+@layer components {
+  /* Your custom component styles go here */
+}
+
+@layer utilities {
+  /* Your custom utilities go here */
+}
