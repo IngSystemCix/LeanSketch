@@ -65,26 +65,77 @@ function adjustTextareaHeight(textarea) {
 }
 
 buttonClear.addEventListener("click", () => {
+  let isAnyTextareaFilled = false;
+
   textareas.forEach((textarea) => {
+    if (textarea.value) {
+      isAnyTextareaFilled = true;
+      Swal.fire({
+        text: "Todos los campos han sido borrados.",
+        icon: 'success',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#4caf50'
+      });
+      textarea.value = ""; // Limpiar el contenido del textarea
+      adjustTextareaHeight(textarea); // Ajustar la altura después de limpiar
+    }
+  });
+
+  if (!isAnyTextareaFilled) {
     Swal.fire({
-      text: "Todos los campos han sido borrados.",
-      icon: 'success',
+      text: "No hay campos para borrar.",
+      icon: 'info',
       confirmButtonText: 'Aceptar',
       confirmButtonColor: '#4caf50'
     });
-    textarea.value = ""; // Limpiar el contenido del textarea
-    adjustTextareaHeight(textarea); // Ajustar la altura después de limpiar
+  }
+});
+
+textareas.forEach(textarea => {
+  // Ajusta la altura al cargar la página
+  adjustTextareaHeight(textarea);
+
+  // Ajusta la altura a medida que se escribe
+  textarea.addEventListener('input', () => {
+    adjustTextareaHeight(textarea);
   });
 });
 
 function captureDiv() {
-  html2canvas(document.querySelector(".auto-captura")).then((canvas) => {
-    let img = canvas.toDataURL("image/png");
-    let link = document.createElement("a");
-    link.href = img;
-    link.download = "screenshot.png";
-    link.click();
-  });
+  let isAnyTextareaFilled = false;
+  
+  for (let i = 0; i < textareas.length; i++) {
+    const textarea = textareas[i];
+    if (textarea.value) {
+      isAnyTextareaFilled = true;
+      break;
+    }
+  }
+
+  if (isAnyTextareaFilled) {
+    html2canvas(document.querySelector(".auto-captura")).then((canvas) => {
+      let img = canvas.toDataURL("image/png");
+      let link = document.createElement("a");
+      link.href = img;
+      link.download = "screenshot.png";
+      link.click();
+      Swal.fire({
+        text: "Captura realizada con éxito.",
+        icon: 'success',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#4caf50',
+        timer: 3000, // 3 seconds
+        timerProgressBar: true,
+      });
+    });
+  } else {
+    Swal.fire({
+      text: "No hay campos llenos para capturar.",
+      icon: 'info',
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#4caf50'
+    });
+  }
 }
 
 textareas.forEach(textarea => {
